@@ -8,7 +8,7 @@ O objetivo do projeto é apresentar minhas informações pessoais, formação ac
 
 Link do projeto online:
 
-`https://AndreaMPinheiro.github.io/meu_curriculo/`
+`https://andreampinheiro.github.io/meu_curriculo/`
 
 ## Repositório GitHub
 
