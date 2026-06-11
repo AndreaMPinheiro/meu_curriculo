@@ -1,0 +1,501 @@
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* VARIÁVEIS DE CORES */
+  :root {
+    --bg-color: #f7f2ff;
+    --card-color: #ffffff;
+    --sidebar-color: #eefaf7;
+    --primary-color: #7c3aed;
+    --secondary-color: #10b981;
+    --accent-color: #c084fc;
+    --title-color: #24213f;
+    --text-color: #5d5a72;
+    --border-color: #e4dff2;
+    --shadow-color: rgba(61, 46, 102, 0.14);
+  }
+  
+  /* TEMA ESCURO */
+  body.dark-theme {
+    --bg-color: #171320;
+    --card-color: #241b33;
+    --sidebar-color: #1f2d2a;
+    --primary-color: #a78bfa;
+    --secondary-color: #34d399;
+    --accent-color: #c084fc;
+    --title-color: #ffffff;
+    --text-color: #e6e0f3;
+    --border-color: #3d3352;
+    --shadow-color: rgba(0, 0, 0, 0.35);
+  }
+  
+  /* CORPO DA PÁGINA */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(124, 58, 237, 0.16), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.16), transparent 35%),
+      var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* LINKS */
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* CONTAINER GERAL */
+  .page-container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    background-color: var(--card-color);
+    box-shadow: 0 10px 35px var(--shadow-color);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  /* SIDEBAR */
+  .sidebar {
+    background: linear-gradient(180deg, var(--sidebar-color), var(--card-color));
+    padding: 28px;
+    border-right: 1px solid var(--border-color);
+  }
+  
+  /* BOTÕES DO TOPO */
+  .top-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .icon-button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--card-color);
+    color: var(--title-color);
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .icon-button:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+    
+  /* FOTO COM ANIMAÇÃO CIRCULAR */
+.profile-photo-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.photo-ring {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  padding: 6px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--primary-color)
+  );
+  animation: rotateRing 5s linear infinite;
+}
+
+.photo-ring::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background-color: var(--card-color);
+}
+
+.profile-photo {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+  
+  /* INTRODUÇÃO */
+  .intro {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .intro h1 {
+    color: var(--title-color);
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .profession {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  /* SEÇÕES DA SIDEBAR */
+  .sidebar-section {
+    margin-bottom: 32px;
+  }
+  
+  .sidebar-section h2,
+  .content-section h2 {
+    color: var(--title-color);
+    font-size: 19px;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  
+  .sidebar-section h2::after,
+  .content-section h2::after {
+    content: "";
+    width: 45px;
+    height: 4px;
+    background-color: var(--primary-color);
+    display: block;
+    margin-top: 8px;
+    border-radius: 10px;
+  }
+  
+  .sidebar-section p {
+    font-size: 14px;
+  }
+  
+  /* LISTA DE CONTATO */
+  .contact-list {
+    list-style: none;
+  }
+  
+  .contact-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  /* HABILIDADES */
+  .skill {
+    margin-bottom: 15px;
+  }
+  
+  .skill span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--title-color);
+    font-weight: bold;
+  }
+  
+  .skill-bar {
+    width: 100%;
+    height: 9px;
+    background-color: var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .skill-progress {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  }
+  
+  .skill-progress.html {
+    width: 85%;
+  }
+  
+  .skill-progress.css {
+    width: 75%;
+  }
+  
+  .skill-progress.js {
+    width: 45%;
+  }
+  
+  .skill-progress.php {
+    width: 30%;
+  }
+  
+  /* CONTEÚDO PRINCIPAL */
+  .content {
+    padding: 35px;
+  }
+  
+  .content-section {
+    background-color: var(--card-color);
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px var(--shadow-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  
+  .content-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px var(--shadow-color);
+    border-color: var(--secondary-color);
+  }
+  
+  .content-section p {
+    margin-bottom: 12px;
+  }
+  
+  /* LINHA DO TEMPO */
+  .timeline-item {
+    padding-left: 22px;
+    border-left: 3px solid var(--secondary-color);
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  .timeline-item::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    top: 5px;
+  }
+  
+  .timeline-date {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  
+  .timeline-item h3 {
+    color: var(--title-color);
+    margin-bottom: 5px;
+  }
+  
+  /* TAGS DE TECNOLOGIAS */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tags span {
+    background: linear-gradient(90deg, rgba(124, 58, 237, 0.12), rgba(16, 185, 129, 0.12));
+    color: var(--title-color);
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .tags span:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+  }
+  
+  /* FORMULÁRIO */
+  .contact-form {
+    margin-top: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 18px;
+  }
+  
+  .form-group label {
+    display: block;
+    color: var(--title-color);
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 15px;
+    outline: none;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.18);
+  }
+  
+  .submit-button {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+  }
+  
+  .form-status {
+    margin-top: 12px;
+    font-weight: bold;
+  }
+  
+  /* RODAPÉ */
+  .footer {
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+  }
+  
+  /* RESPONSIVIDADE */
+  @media (max-width: 900px) {
+    .page-container {
+      grid-template-columns: 1fr;
+      margin: 15px;
+    }
+  
+    .sidebar {
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+    }
+  
+    .content {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .intro h1 {
+      font-size: 22px;
+    }
+  
+    .content-section {
+      padding: 20px;
+    }
+  
+    .sidebar {
+      padding: 22px;
+    }
+  
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  /* ANIMAÇÃO SUAVE DAS SEÇÕES */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ACESSIBILIDADE: REDUZ ANIMAÇÕES SE O USUÁRIO PREFERIR */
+@media (prefers-reduced-motion: reduce) {
+  .photo-ring::before {
+    animation: none;
+  }
+
+  .reveal,
+  .content-section,
+  .icon-button,
+  .submit-button,
+  .tags span {
+    transition: none;
+  }
+}
+  
+  /* IMPRESSÃO */
+  @media print {
+    body {
+      background-color: #ffffff;
+    }
+  
+    .page-container {
+      box-shadow: none;
+      margin: 0;
+      border-radius: 0;
+    }
+  
+    .top-actions,
+    .contact-form {
+      display: none;
+    }
+  
+    .photo-ring::before {
+      animation: none;
+    }
+  
+    .content-section {
+      box-shadow: none;
+      break-inside: avoid;
+    }
+  }
