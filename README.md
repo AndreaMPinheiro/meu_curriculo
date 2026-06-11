@@ -1,6 +1,6 @@
 # Currículo Online
 
-Este projeto é um currículo profissional online desenvolvido como atividade acadêmica, utilizando tecnologias fundamentais do desenvolvimento web: HTML, CSS, JavaScript, PHP, Git e GitHub.
+Este projeto é um currículo profissional online desenvolvido como atividade acadêmica, utilizando tecnologias fundamentais do desenvolvimento web: HTML, CSS, JavaScript, PHP e GitHub.
 
 O objetivo do projeto é apresentar minhas informações pessoais, formação acadêmica, experiências, habilidades e formas de contato em uma página web responsiva, organizada e publicada online.
 
@@ -8,13 +8,13 @@ O objetivo do projeto é apresentar minhas informações pessoais, formação ac
 
 Link do projeto online:
 
-`https://andreampinheiro.github.io/meu_curriculo/`
+[Ver currículo online](https://andreampinheiro.github.io/meu_curriculo/)
 
 ## Repositório GitHub
 
 Link do repositório:
 
-`https://github.com/AndreaMPinheiro/meu_curriculo`
+[Ver o repositório no GitHub](https://github.com/AndreaMPinheiro/meu_curriculo)
 
 ## Tecnologias utilizadas
 
